@@ -1,0 +1,100 @@
+
+body {
+    padding: 0 1% 0 1%;
+    margin-top: 0px;
+    background: #CACACA;
+    color: #222;
+}
+
+header {
+  padding: 15px;
+  box-shadow: 0 10px 18px -8px;
+  background: rgb(19, 15, 16);
+  top: 0;
+  width: 94%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+#logo {
+	display: inline-block;
+}
+
+nav.mainnavigation {
+	display: inline-block;
+	padding: 0;
+}
+nav.mainnavigation ul {
+  	padding-left: 0px;
+}
+nav.mainnavigation ul li {
+	float: left;
+}
+nav.mainnavigation ul li a {
+	position: relative;
+  /* margin-top: -32px; */
+  top: -25px;
+}
+  
+
+nav.subnavigation {
+	visibility: hidden;
+}
+nav.subnavigation ul {
+  	padding-left: 20px;
+}
+nav.subnavigation ul li {
+	float: none;
+}
+nav a {
+	color: rgb(244, 240, 241);
+}
+
+nav li.background_stark {
+	background-image: url('../img/stark/sigil.jpg');
+  	background-size: 90px 90px;
+  	background-repeat: no-repeat;
+  	background-position-y: -6px;
+}
+
+nav li.background_lannister {
+	background-image: url('../img/lannister/sigil.jpg');
+  	background-size: 90px 90px;
+  	background-repeat: no-repeat;
+  	background-position-y: -6px;
+}
+
+nav li.background_baratheon {
+	background-image: url('../img/baratheon/sigil.png');
+  	background-size: 90px 90px;
+  	background-repeat: no-repeat;
+  	background-position-y: -6px;
+}
+
+nav li.background_tyrell {
+	background-image: url('../img/tyrell/sigil.jpg');
+  	background-size: 90px 90px;
+  	background-repeat: no-repeat;
+  	background-position-y: -6px;
+}
+
+nav li.background_martell {
+	background-image: url('../img/martell/sigil.jpg');
+  	background-size: 90px 90px;
+  	background-repeat: no-repeat;
+  	background-position-y: -6px;
+}
+
+nav li.background_tagaryen {
+	background-image: url('../img/tagaryen/sigil.jpg');
+  	background-size: 90px 90px;
+  	background-repeat: no-repeat;
+  	background-position-y: -6px;
+}
+.breadcrump {
+}
+

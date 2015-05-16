@@ -7,16 +7,16 @@
 </head>
 <body>
 <header>
-	<nav>
+	<nav class="mainnavigation">
 		<div id="home" role="logo"><a href="index.html" alt="Logo of Game of Thrones">Logo</a></div>
 		<ul>
 			<li><a href="index.html">Home</a></li>
-			<li>
-				<a href="house/stark/main.html">House Stark</a>
+			<li class="selected">
+				<a href="main.html">House Stark</a>
 				<ul>
-					<li><a href="house/stark/history.html">History</a></li>
-					<li><a href="house/stark/sigil.html">Sigil</a></li>
-					<li><a href="house/stark/characters.html">Main Characters</a></li>
+					<li><a href="history.html">History</a></li>
+					<li><a href="sigil.html">Sigil</a></li>
+					<li><a href="characters.html">Main Characters</a></li>
 				</ul>
 			</li>
 			<li>
@@ -62,15 +62,20 @@
 		</ul>
 	</nav>
 </header>
+<nav class="subnavigation">
+	<ul>
+		<li><a href="../../index.html">Home</a></li>
+		<li>House Stark</li>
+	</ul>
+</nav>
 <div role="main">
 	<section>
-		<h2>Main section</h2>
-		<p>bla blub</p>
+		<h2>Sigil</h2>
+		<figure>
+		  	<img src="../../img/stark/sigil.jpg" alt="Sigil of House Stark">
+		  	<figcaption>A grey direwolf on a white field</figcaption>
+		</figure>
 	</section>
-	<figure>
-		  	<h2>Trailer </h2>
-		  	<figcaption>Trailor of Season 5</figcaption>
-    </figure>
 </div>
 <footer><a href="#">Contact</a> | <a href="#">Imprint</a> | © 2015 valar_morghulis</footer>
 </body>
