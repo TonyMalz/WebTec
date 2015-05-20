@@ -197,6 +197,7 @@ h2:after {
 }
 
 section p {
+  border-top: 1px solid #666;
   position: relative;
   top: -25px;
   background: rgba(212, 205, 177, 0.24);
@@ -204,20 +205,16 @@ section p {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-section:first-child p{
-  border-top: 1px solid #666;
-}
 
 aside {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
+  color : rgb(131, 127, 128);
 }
 aside:before {
   color: #ccc;
-  content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
   margin-right: 0.25em;
@@ -227,10 +224,34 @@ aside p {
   display: inline;
 }
 
+aside.quotes {
+  quotes: "\201C""\201D""\2018""\2019";
+  content: open-quote;
+}
+aside.quotes:before {
+  content: open-quote;
+}
+
+aside a {
+  color: rgb(131, 127, 128);
+}
+
+aside.links ul {
+  padding-top: 0;
+}
+
+
+aside.links:before {
+  content: '>';
+  font-size: 2em;
+}
+
+
 figcaption {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
   padding: 0.5em 10px;
+  color : rgb(131, 127, 128);
 }
 figcaption:before {
   color: #ccc;
