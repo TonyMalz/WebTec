@@ -58,7 +58,7 @@ nav a {
 nav li.background {
     background-size: 100px 100px;
     background-repeat: no-repeat;
-    background-position-y: -6px;
+    background-position: 0px -6px;
 }
 
 nav li.background a {
@@ -97,7 +97,7 @@ nav.mainnavigation li:hover li {
   opacity: 1;
 }
 nav.mainnavigation li:hover{
-  background-position-y: 105px;
+  background-position: 0px 105px;
 }
 
 nav.mainnavigation li ul {
@@ -112,7 +112,7 @@ nav.mainnavigation li a:hover::before{
 }
 
 nav li.selected {
-  background-position-y: 105px !important;
+  background-position: 0px 105px !important;
 }
 nav li.selected li {
   opacity: 1;
