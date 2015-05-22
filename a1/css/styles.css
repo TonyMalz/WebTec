@@ -1,14 +1,17 @@
 
 body {
-    padding: 0 1% 0 1%;
-    margin-top: 0px;
-    background: #efefef;
-    color: #222;
-    font: 16px Helvetica, Arial, Sans-Serif;
-    line-height: 1.7;
-    background-image: url('../img/linen.png');
+  padding: 0 1% 0 1%;
+  margin-top: 0px;
+  background: #efefef;
+  color: #222;
+  font: 16px Helvetica, Arial, Sans-Serif;
+  line-height: 1.7;
+  background-image: url('../img/linen.png');
 }
-
+em {
+  font-weight: bold;
+  background-color: rgb(212, 205, 177);
+}
 header {
   padding: 15px;
   box-shadow: 0 10px 18px -8px;
