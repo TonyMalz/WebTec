@@ -12,6 +12,38 @@ em {
   font-weight: bold;
   background-color: rgb(212, 205, 177);
 }
+
+.contact_form label {
+    display: block;
+    width:150px;
+    margin-top: 10px;
+    padding:3px;
+}
+.contact_form input {
+    height:25px; 
+    width:220px; 
+    padding:5px 8px;
+    border-radius: 5px;
+    font-size: .8em;
+}
+.contact_form textarea {
+  padding:8px;
+  width:300px;
+  border-radius: 5px;
+  font-size: .8em;
+}
+.contact_form button {
+  height:55px;
+  width:220px;
+  background-color: rgb(123, 144, 111);
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  padding: 6px 20px;
+  text-align: center;
+  font-size: 1.05em;
+}
+
 header {
   padding: 15px;
   box-shadow: 0 10px 18px -8px;
@@ -285,6 +317,7 @@ footer {
 footer a {
   color: rgba(244, 240, 241,.5);
 }
+
 
 
 

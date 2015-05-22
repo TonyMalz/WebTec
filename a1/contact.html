@@ -76,43 +76,27 @@
 <div role="main">
 	<section>
 		<h2>Contact</h2>
-		<p>
-			<em>Musterverein</em>
-			<em>e.V.</em><br>
-			Mustermannstr. 1<br>
-			80339 München<br> 
-			<br>
-			Telefon:
-			+49 (0)89 / 12 34 56<br>
-			Telefax:
-			+49 (0)89 / 12 34 57<br>
-			E-Mail:
-			info@musterverein.de <br> <br>
-			Gemeinschaftlich vertretungsbefugt:<br>
-			1. Vorsitzender <br>
-			Max Mustermann <br>
-			c/o Mustermannstr.1 <br> 80339 München <br> <br> 
-			Telefon:
-			+49 (0)89-1234659 <br>
-			E-Mail:
-			mustermann@musterverein.de <br><br>
-			2.Vorsitzende <br>
-			Melinda Musterfrau <br>
-			c/o Mustermannstr.1 <br> 80339 München <br> <br> 
-			Telefon:
-			+49 (0)89-1234659 <br>
-			E-Mail:
-			musterfrau@musterverein.de <br> 
-			<br> 
-			Das Impressum gilt für: 
-			http://www.musterstadt/vereine/musterverein.de
-			<br> <br>
-			<br>
-			Registergericht: Amtsgericht München<br>
-			Registernummer: VR 11111<br><br>
-		</p>
+		<form class="contact_form" action="" method="post" name="contact_form">
+		<ul>
+		    <li>
+		        <label for="name">Name:</label>
+		        <input type="text" name="name" placeholder="Jon Snow"/>
+		    </li>
+		    <li>
+			    <label for="email">Email:</label>
+			    <input type="text" name="email" placeholder="jon@snow.com"/>
+			</li>
+			<li>
+			    <label for="message">Message:</label>
+			    <textarea name="message" cols="40" rows="8"></textarea>
+			</li>
+			<li>
+    			<button class="submit" type="submit">Submit Message</button>
+			</li>
+		</ul>
+		</form>
 	</section>
 </div>
-<footer><a href="imprint.html">Imprint</a> | © 2015 valar_morghulis</footer>
+<footer><a href="contact.html">Contact</a> | <a href="imprint.html">Imprint</a> | © 2015 valar_morghulis</footer>
 </body>
 </html>
