@@ -8,20 +8,25 @@
 <body>
 <div class="quiz">
 	<h1>Quiz</h1>
-	<section >
-		<h2 id="question">Fragetext hier?</h2>
+	<section id="quiz">
+		<h2 id="question"></h2>
 		<ul class="possibleAnswers">
-			<li class="answer">Antwort 1</li>
-			<li class="answer">Antwort 2</li>
-			<li class="answer">Antwort 3</li>
-			<li class="answer">Antwort 4</li>
+			<li class="answer"></li>
+			<li class="answer"></li>
+			<li class="answer"></li>
+			<li class="answer"></li>
 		</ul>
+		<div id="finalResults">
+			Glückwunsch, <br/>
+			Sie haben <span class="points"></span> Punkt(e) von <span class="maxRounds"></span> möglichen erziehlt!<br/>
+			<button id='restart'>Neustart</button>
+		</div>
 	</section>
 	<button id='confirm'>Sicher?</button>
 	<button id='next'>Nächste Frage...</button>
-	<div class="points">Punkte: <span id="points"></span></div>
+	<div class="points">Punkte: <span class="points"></span></div>
 	<div class="progress">
-		Beantwortete Fragen: <span id="currentRound"></span>/<span id="maxRounds"></span>
+		Beantwortete Fragen: <span id="currentRound"></span>/<span class="maxRounds"></span>
 		<br />
 		<progress id="progress" max="15" value="0"></progress>
 	</div>
@@ -29,8 +34,5 @@
 
 <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="js/quiz.js"></script>
-<script type="text/javascript">
-	Quiz.run();
-</script>
 </body>
 </html>

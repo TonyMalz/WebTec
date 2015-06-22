@@ -19,7 +19,10 @@ var Quiz = {
 	pointsDisplay : null,
 	maxRoundsDisplay : null,
 	currentRoundDisplay : null,
+	finalResultsDisplay : null,
+	restartBtn : null,
 	possibleAnswers : [],
+	standardErrorMsg : "Sorry, we encountered an error :(",
 
 	run : function(rounds){
 		this.init(rounds);
@@ -39,18 +42,38 @@ var Quiz = {
 		this.progressBar = $('#progress');
 		this.progressBar.attr('max', this.maxRounds);
 
-		this.pointsDisplay = $('#points');
+		this.pointsDisplay = $('span.points');
 		this.pointsDisplay.text(0);
 
-		this.maxRoundsDisplay = $('#maxRounds');
+		this.maxRoundsDisplay = $('span.maxRounds');
 		this.maxRoundsDisplay.text(this.maxRounds);
 
 		this.currentRoundDisplay = $('#currentRound');
 		this.questionDisplay = $('#question');
+		
+		this.finalResultsDisplay = $('#finalResults');
+
+		this.restartBtn = $('#restart');
+		this.restartBtn.on('click',this.restart);
 
 		$('.possibleAnswers li').each(function(argument) {
 			Quiz.possibleAnswers.push($(this));
 		});
+
+		this.standardErrorMsg = "Entschuldigung, es konnte leider keine neue Frage geladen werden. Die aktuelle Quizrunde wird beendet...";
+	},
+
+	restart : function(){
+		Quiz.currentRound = 0;
+		Quiz.selectedAnswer = null;
+		Quiz.correctAnswer = null;
+		Quiz.currentQuestion = null;
+		Quiz.questionsAsked = [];
+		Quiz.correctAnswersGiven = 0;
+		Quiz.pointsDisplay.text(0);
+		Quiz.finalResultsDisplay.slideUp();
+
+		Quiz.nextRound();
 	},
 
 	nextRound : function(){
@@ -62,12 +85,13 @@ var Quiz = {
 		if (Quiz.currentRound <= Quiz.maxRounds) {
 			Quiz.getNextQuestion();
 		} else {
-			Quiz.showResults();
+			Quiz.showFinalResults();
 		}
 	},
 
-	showResults : function(){
-		console.log('done!');
+	showFinalResults : function(){
+		this.restartBtn.show();
+		this.finalResultsDisplay.slideDown();
 	},
 
 	removeClickEvents : function(){
@@ -101,13 +125,13 @@ var Quiz = {
 				Quiz.currentQuestion = data.question;
 				Quiz.showQuestion();
 			} else {
-				var msg = data.msg ? data.msg : "Entschuldigung, es konnte leider keine neue Frage geladen werden.";
+				var msg = data.msg ? data.msg : Quiz.standardErrorMsg;
 				Quiz.showError(msg);
 			}
 			
 		}).fail(function(){
 			Quiz.currentQuestion = null;
-			Quiz.showError("Entschuldigung, es konnte leider keine neue Frage geladen werden.");
+			Quiz.showError(Quiz.standardErrorMsg);
 		});
 	},
 
@@ -139,6 +163,7 @@ var Quiz = {
 
 	checkAnswer : function(){
 		Quiz.removeAnswerHiglights();
+
 		var questionWasAlreadyAsked = Quiz.questionsAsked.indexOf(Quiz.currentQuestion.id) >= 0;
 		
 		if (questionWasAlreadyAsked) {
@@ -150,7 +175,7 @@ var Quiz = {
 			Quiz.confirmBtn.text('Richtig!').addClass('correctAnswer');
 			Quiz.correctAnswersGiven++;
 		} else {
-			Quiz.confirmBtn.text('Leider falsch').addClass('wrongAnswer');
+			Quiz.confirmBtn.text('Leider falsch :(').addClass('wrongAnswer');
 			Quiz.possibleAnswers[Quiz.selectedAnswer].addClass('wrongAnswer');
 		}
 
@@ -165,7 +190,10 @@ var Quiz = {
 	},
 
 	showError : function(msg){
-		console.log(msg);
+		alert(msg);
+		Quiz.showFinalResults();
 	}
 
 };
+
+Quiz.run();
